@@ -1,0 +1,237 @@
+@import "default.scss";
+@import "content_about.scss";
+@import "content_fProjects.scss";
+@import "content_sProcess.scss";
+@import "content_sProvided.scss";
+@import "content_team.scss";
+@import "content_testimonials";
+@import "content_blogs";
+@import "content_contact.scss";
+@import "footer.scss";
+@import "templates.scss";
+
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.intro {
+    height: 1086px;
+    width: 100%;
+    background: url('../images/backgrounds/Layer 6.png') center no-repeat;
+    background-size: cover;
+
+    .intro__header {
+        height: 432px;
+        width: 100%;
+        color: #fff;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .intro__header-title {
+            @extend %h_f-f;
+            font-size: 202px;
+            letter-spacing: -12px;
+            line-height: 0.85;
+            padding-left: 25px;
+            &::first-letter {
+                color: #ffc600;
+            }
+        }
+
+        .intro__header-body {
+            @extend %text_f-f;
+            padding-left: 40px;
+            font-family: 18px;
+            &::first-letter {
+                color: #ffc600;
+            }
+        
+        }
+
+        .intro__header-link {
+            margin-top: 30px;
+            padding-left: 40px;
+            color: #ffc600;
+            transition: color .2s linear;
+            &:hover {
+                color: #73a615;
+            }
+        }
+    }
+
+    .intro__inner {
+        height: 654px;
+        padding: 70px 45px;
+        background: url('../images/backgrounds/Layer 5.png') center no-repeat;
+        background-size: cover;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .intro__inner-title {
+            @extend %h_f-f;
+            color: #fff;
+            font-size: 60px;
+            line-height: 0.8;
+            width: 45%;
+            span {
+                color: #ffc600;
+            }
+        }
+
+        .intro__burger {
+            cursor: pointer;
+            margin-top: 20px;
+            width: 30px;
+            height: 25px;
+            background-color: transparent;
+            padding: 1px 0px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            .intro__burger-line {
+                width: 30px;
+                height: 3px;
+                background-color: #fff;
+                transition: 0.3s all linear;
+            }
+
+            &.active .intro__burger-line:nth-child(1) {
+                transform: rotate(45deg);
+                position: relative;
+                top: 10px;
+            }
+            &.active .intro__burger-line:nth-child(2) {
+                transform: scale(0);
+            }
+            &.active .intro__burger-line:nth-child(3) {
+                transform: rotate(-45deg);
+                position: relative;
+                top: -10px;
+            }
+        }
+
+        .intro__inner-nav {
+            @extend %text_f-f;
+            display: flex;
+            margin-top: 50px;
+            .intro__inner-nav-item {
+                transition: color .2s linear;
+                margin-right: 35px;
+                a {
+                    color: #ffc600;
+                    font-size: 18px;
+                    &:hover, &.active {
+                        color:#fff;
+                    }
+                    &.active::after, &:hover::after {
+                        display: block;
+                    } 
+                    &::after{
+                        content: "";
+                        display: none;
+                        height: 1px;
+                        width: 100%;
+                        background-color: #ffc600;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .intro {
+        .intro__inner {
+            .intro__burger {
+                display: flex;
+            }
+            .intro__inner-nav {
+                display: block;
+                margin-top: 5px;
+                padding: 15px 60px 5px 15px;
+                background-color: rgb(31, 30, 49);
+                opacity: 0;
+                @keyframes appear {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+                &.active {
+                    animation: appear 0.5s linear 0s forwards;
+                }
+                .intro__inner-nav-item {
+                    transition: color .2s linear;
+                    margin-right: 0px;
+                    margin-bottom: 15px;
+                    padding-bottom: 1px;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        margin-top: 5px;
+                        height: 1px;
+                        width: 100%;
+                        background-color: #fff;
+                    }
+                    a {
+                        color: #ffc600;
+                        font-size: 18px;
+                        &:hover, &.active {
+                            color:rgb(255, 255, 255);
+                        }
+                        &::after, &.active::after, &:hover::after{
+                            content: "";
+                            display: none;
+                            height: 1px;
+                            width: 100%;
+                            background-color: #ffc600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .intro {
+        .intro__header {
+            .intro__header-title {
+                font-size: 100px;
+                letter-spacing: -3px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .intro {
+        .intro__header {
+            .intro__header-title {
+                font-size: 70px;
+                padding-left: 30px;
+                letter-spacing: -1px;
+            }
+        }
+        .intro__inner {
+            .intro__burger {
+                display: flex;
+                .intro__burger-line {
+                    background-color:rgb(255, 0, 0);
+                }
+            }
+        }
+    }
+        
+}

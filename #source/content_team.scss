@@ -1,0 +1,106 @@
+@import "templates.scss";
+
+.content__team {
+    height: 590px;
+    background-color: #fff;
+    display: flex;
+
+    .content__team__header {
+        min-width: 26.6%;
+        padding: 100px 0px 0px 40px;
+        .content__team__title {
+            @extend %titleBlack;
+            word-spacing: 5px;
+            &::after {
+                content: "";
+                position: relative;
+                top: -4px;
+                left: 70px;
+                width: 80px;
+                height: 1px;
+                display: block;
+                background-color: #c5c5c5;
+            }
+        }
+    }
+
+    .content__team__body {
+        padding-left: 25px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .content__team__body__header {
+            width: 75%;
+            margin-bottom: 30px;
+            .content__team__body-title {
+                @extend %title_f-f;
+                margin-bottom: 15px;
+            }
+            .content__team__body-descr {
+                color: #8e8e8e;
+            }
+        }
+        
+        .content__team__members {
+            display: flex;
+            .content__team__members-item {
+                margin-right: 20px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                h4 {
+                    margin-top: 7px;
+                    @extend %text_f-f;
+                    text-align: center;
+                }
+                p {
+                    @extend %title_f-f;
+                    line-height: 0.9;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .content__team {
+        display: block;
+        background-color:aquamarine;
+        height: fit-content;
+        .content__team__header {
+            padding: 20px 0px 0px 40px;
+            text-align: center;
+            .content__team__title {
+                width: fit-content;
+                margin: 0 auto;
+                margin-bottom: 15px;
+                &::after {
+                    position: static;
+                    width: 100%;
+                }
+            }
+        }
+        .content__team__body {
+            padding-right: 10px;
+            .content__team__body__header {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 552px) {
+    .content__team {
+        .content__team__body {
+            .content__team__members {
+                flex-wrap: wrap;
+                .content__team__members-item {
+                    width: 40%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

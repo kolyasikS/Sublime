@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "Myriad Pro Bold";  
+    src: url("../fonts/MyriadPro/MyriadPro-Bold.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: "Myriad Pro Regular";  
+    src: url("../fonts/MyriadPro/MyriadPro-Regular.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: "Myriad Pro Semibold";  
+    src: url("../fonts/MyriadPro/MyriadPro-Semibold.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: "Myriad Pro Italic";  
+    src: url("../fonts/MyriadPro/MyriadPro-It.ttf") format("truetype"); 
+}
+%f-l {
+    &::first-letter {
+        color: #ffc600;
+    }
+}
+
+%title_f-f {
+    font-family: "Myriad Pro Italic";
+}
+%d-f-col-cen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+%h_f-f {
+    font-family: "Myriad Pro Bold";
+}
+%text_f-f {
+    font-family: "Myriad Pro Regular";
+}
+%titleBlack {
+    font-size: 28px;
+    font-family: "Myriad Pro Semibold";  
+    color: #000;
+    span {
+        font-size: 50px;
+    }
+    &::first-letter {
+        font-size: 50px;
+        color: #ffc600;
+    }
+}
+
+%titleWhite {
+    font-size: 28px;
+    font-family: "Myriad Pro Semibold";  
+    color: #fff;
+    span {
+        font-size: 50px;
+    }
+    &::first-letter {
+        font-size: 50px;
+        color: #ffc600;
+    }
+}
+
+@mixin afterTitle ($l, $w, $t){
+    &::after {
+        content: "";
+        position: relative;
+        top: $t;
+        left: $l;
+        width: $w;
+        height: 1px;
+        display: block;
+        background-color: #c5c5c5;
+    }
+}
+@mixin beforeTitle ($l, $w, $t){
+    &::before {
+        content: "";
+        position: relative;
+        top: $t;
+        left: $l;
+        width: $w;
+        height: 1px;
+        display: block;
+        background-color: #c5c5c5;
+    }
+}
+@mixin burger($lineColor) {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 30px;
+    height: 25px;
+    background-color: transparent;
+    padding: 1px 0px;
+    display: flex; //temo
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > div {
+        width: 30px;
+        height: 3px;
+        background-color: $lineColor;
+        transition: 0.3s all linear;
+    }
+    &.active > div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+    }
+    &.active > div:nth-child(2) {
+        transform: scale(0);
+    }
+    &.active > div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+    }
+}

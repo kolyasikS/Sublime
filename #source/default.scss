@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    
+}
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+:focus, :active {
+    outline: none;
+}
+li {
+    list-style-type: none;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+a:focus, a:active {
+    outline: none;
+}
+
+.background {
+    background: url('../images/backgrounds/Layer 48.png') center no-repeat;
+    background-size: cover;
+}

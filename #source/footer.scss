@@ -1,0 +1,245 @@
+@import "templates.scss";
+
+.footer {
+    width: 100%;
+    height: 750px;
+    background: url('../images/backgrounds/Layer 47.png') center no-repeat;
+    background-size: cover;
+
+    .container {
+        height: 100%;
+        width: 100%;
+    }
+    .footer-inner {
+        height: 700px;
+        width: 100%;
+        display: flex;
+
+        .footer__header {
+            width: 31%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .footer__menu {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-left: 25px;
+                padding-bottom: 45px;
+                .footer__menu-title {
+                    font-size: 50px;
+                    font-family: "Myriad Pro Bold";  
+                    color: #fff;
+                    &::first-letter {
+                        color: #ffc600;
+                    }
+                }
+                .footer__menu__burger {
+                    @include burger(#fff);
+                    display: none;
+                }
+                .footer__menu-nav {
+                    padding: 60px 0px 50px;
+                    .footer__menu-nav-item {
+                        margin-bottom: 18px;
+                        a {
+                            color: #fff;
+                            font-family: "Myriad Pro Semibold";  
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            transition: color 0.3s linear;
+                            &:hover {
+                                color: #ffc600;   
+                            }
+                        }
+                        &.active a {
+                            color: #ffc600;   
+                        }
+                    }
+                }
+            }
+            .footer-nets {
+                width: 100%;
+                padding-left: 25px;
+                @include beforeTitle(0px, 115px, -12px);
+                &::before {
+                    background-color: #ffc600;
+                }
+            }
+        }
+    
+        .footer-caption {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 150px;
+            padding-left: 20px;
+            h1 {
+                @extend %h_f-f;
+                color: #fff;
+                font-size: 111px;
+                line-height: 0.8;
+                letter-spacing: -5px;
+                height: auto;
+                span {
+                    color:#ffc600;
+                }
+            }
+        }
+    
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .footer {
+        background: url('../images/backgrounds/Layer 49.png') center no-repeat;
+        background-size: cover;
+        .container {
+        }
+        .footer-inner {
+            .footer__menu {
+                .footer__menu-title {
+                    &::first-letter {
+                    }
+                }
+                .footer__menu-nav {
+                    .footer__menu-nav-item {
+                        a {
+                            &:hover {
+                            }
+                        }
+                        &.active a {
+                        }
+                    }
+                }
+                .footer-nets {
+                    &::before {
+                    }
+                }
+            }
+            .footer-caption {
+                h1 {
+                    span {
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        .container {
+        }
+        .footer-inner {
+            .footer__header {
+                min-width: fit-content;
+                .footer__menu {
+                    .footer__menu-title {
+                    }
+                    .footer__menu__burger {
+                        display: flex;
+                    }
+                    .footer__menu-nav {
+                        min-width: fit-content;
+                        position: absolute;
+                        margin-top: 5px;
+                        top: 110px;
+                        padding: 15px 30px 5px 15px;
+                        background-color: rgb(84, 84, 84);
+                        opacity: 0;
+                        display: none;
+                        z-index: 1;
+                        @keyframes appear {
+                            0% {
+                                opacity: 0;
+                            }
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+                        &.active {
+                            animation: appear 0.5s linear 0s forwards;
+                            display: block;
+                        }
+                        .footer__menu-nav-item {
+                            transition: color .2s linear;
+                            margin-right: 0px;
+                            margin-bottom: 15px;
+                            padding-bottom: 1px;
+                            position: relative;
+                            &::after{
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                margin-top: 5px;
+                                height: 1px;
+                                width: 100%;
+                                background-color: rgb(204, 204, 255);
+                            }
+                            &.active a {
+                                color: rgb(94, 173, 210);
+                            }
+                            a {
+                                color: #ffffff;
+                                font-size: 18px;
+                                &:hover, &.active {
+                                    color:rgb(94, 173, 210);
+                                }
+                            }
+                        }
+                    }
+                    .footer-nets {
+                        margin-top: 20px;
+                        &::before {
+                        }
+                    }
+                }
+            }
+           
+            .footer-caption {
+                padding-bottom: 20px;
+                padding-left: 20px;
+                align-items: center;
+
+                h1 {
+                    font-size: 80px;
+                    line-height: 1;
+                    letter-spacing: -2px;
+                    span {
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .footer {
+        padding-top: 15px;
+        .footer-caption {
+            h1 {
+                position: absolute;
+                left: 20%;
+                span {
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    .footer {
+        .footer-inner {
+            .footer-caption {
+                h1 {
+                    left: 15%;
+                    font-size: 60px;
+                    span {
+                    }
+                }
+            }
+        }
+    }
+}
