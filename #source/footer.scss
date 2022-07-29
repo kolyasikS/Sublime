@@ -1,11 +1,12 @@
 @import "templates.scss";
 
 .footer {
+
     width: 100%;
     height: 750px;
     background: url('../images/backgrounds/Layer 47.png') center no-repeat;
     background-size: cover;
-
+    margin-top: 20px;
     .container {
         height: 100%;
         width: 100%;
@@ -14,12 +15,12 @@
         height: 700px;
         width: 100%;
         display: flex;
-
         .footer__header {
             width: 31%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-end;
+
             .footer__menu {
                 position: relative;
                 width: 100%;
@@ -136,6 +137,7 @@
         }
         .footer-inner {
             .footer__header {
+                justify-content: space-between;
                 min-width: fit-content;
                 .footer__menu {
                     .footer__menu-title {

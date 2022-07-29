@@ -1,5 +1,7 @@
 html, body {
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 100%;
 }
 
@@ -33,6 +35,7 @@ a:focus, a:active {
 .background {
   background: url("../images/backgrounds/Layer 48.png") center no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 @font-face {
@@ -113,6 +116,7 @@ a:focus, a:active {
   height: auto;
   background: url("../images/backgrounds/Layer 48.png") center no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .content__about {
@@ -2161,6 +2165,7 @@ a:focus, a:active {
   height: 750px;
   background: url("../images/backgrounds/Layer 47.png") center no-repeat;
   background-size: cover;
+  margin-top: 20px;
 }
 .footer .container {
   height: 100%;
@@ -2182,9 +2187,9 @@ a:focus, a:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .footer .footer-inner .footer__header .footer__menu {
   position: relative;
@@ -2322,6 +2327,9 @@ a:focus, a:active {
 }
 @media screen and (max-width: 700px) {
   .footer .footer-inner .footer__header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     min-width: -webkit-fit-content;
     min-width: -moz-fit-content;
     min-width: fit-content;
@@ -2720,6 +2728,15 @@ a:focus, a:active {
   }
 }
 @media screen and (max-width: 400px) {
+  .container {
+    max-width: none;
+    min-width: 100%;
+  }
+
+  html {
+    max-width: 400px;
+  }
+
   .intro .intro__header .intro__header-title {
     font-size: 70px;
     padding-left: 30px;
